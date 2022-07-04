@@ -2,13 +2,13 @@
   <div class="title">
     <h2>设备管理系统</h2>
     <h2>
-      <carousel></carousel>
+      <entry></entry>
     </h2>
   </div>
 </template>
 
 <script lang='ts' setup>
-import Carousel from "./Carousel.vue";
+import Entry from "./Entry.vue";
 </script>
 
 <style scoped>

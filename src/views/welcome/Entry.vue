@@ -1,5 +1,9 @@
 <template>
+  <router-link
+        to="/home"
+        >
     <button class="custom-btn btn-16">点击进入</button>
+        </router-link>
 </template>
 
 
