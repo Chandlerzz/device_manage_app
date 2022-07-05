@@ -28,12 +28,18 @@ const props = defineProps({
 });
 watch(
   ()=>props.menuid,
-  (n,o) => {
+  (n:any,o:any) => {
     try{
-      const nEl = getElmentById(n)
-      nEl.classList.add("active")
-      const oEl = getElmentById(o)
-      oEl.classList.remove("active")
+      const nEl:HTMLElement | null = getElmentById(n)
+      if(nEl)
+      {
+        nEl.classList.add("active")
+      }
+      const oEl:HTMLElement | null = getElmentById(o)
+      if(oEl)
+      {
+        oEl.classList.remove("active")
+      }
     }catch(err){
       console.log(err)
     }
@@ -44,11 +50,14 @@ watch(
 )
 const root = ref(null);
 onMounted(() => {
-  const el = getElmentById(props.menuid)
-  el.classList.add("active")
+  const el:HTMLElement | null = getElmentById(props.menuid)
+  if(el)
+  {
+    el.classList.add("active")
+  }
 })
 const emit = defineEmits(['changeId'])
-function menuClick(event){
+function menuClick(event:any){
   let li:any = event.srcElement
   let flag:boolean = true
   while(flag)
@@ -64,10 +73,13 @@ function menuClick(event){
   emit('changeId',parseInt(menuid))
   li.classList.add("active")
 }
-function getElmentById(menuid){
+function getElmentById(menuid:any){
   const condition = "[menuid=\""+menuid+"\"]"
-  let el = root.value
-  el = el.querySelector(condition)
+  let el:HTMLElement|null = root?.value
+  if(el)
+  {
+    el = (el as HTMLElement).querySelector(condition)
+  }
   return el;
 }
 </script>

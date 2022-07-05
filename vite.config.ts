@@ -37,11 +37,11 @@ export default defineConfig({
            return entryHtml
            .replace(
                '<!-- style placeholder -->',
-               '<link rel="stylesheet" type="text/css" href="style.css" rel="external nofollow" />',
+               '<link rel="stylesheet" type="text/css" href="https://object.risen.com/jdyapp/equipmentDailyManagement/static/style.css"/>',
            )
            .replace(
                '<!-- script placeholder -->',
-               `<script type="text/javascript" src="nf-tool.umd.js"></script>`,
+               `<script type="text/javascript" src="https://object.risen.com/jdyapp/equipmentDailyManagement/static/nf-tool.umd.js"></script>`,
            );
        },
        }),
