@@ -118,7 +118,8 @@ function getElmentById(menuid:any){
   width: 55px;
   height: 36px;
   text-align: center;
-  top: 12px;
+  top: 0px;
+  line-height:36px;
   font-size: 20px;
 }
 
